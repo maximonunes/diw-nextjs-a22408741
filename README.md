@@ -4,7 +4,7 @@ Lab 9 de Desenvolvimento e Interfaces Web (DIW) — Universidade Lusófona.
 
 **Autor:** Máximo Nunes (a22408741)
 
-**Deploy (Vercel):** _colar aqui o URL da Vercel_
+**Deploy (Vercel):** https://diw-nextjs-a22408741.vercel.app/
 
 ## Rotas
 
