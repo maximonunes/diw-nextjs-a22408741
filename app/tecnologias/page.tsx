@@ -1,5 +1,5 @@
-import Image from "next/image";
 import tecnologias from "@/app/data/tecnologias.json";
+import TecnologiaCard from "@/components/TecnologiaCard/TecnologiaCard";
 
 interface Tecnologia {
   title: string;
@@ -18,30 +18,17 @@ export default function Tecnologias() {
   return (
     <div>
       <h2>Tecnologias Exploradas</h2>
+      <p>Clica numa tecnologia para veres os detalhes.</p>
 
       <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
         {lista.map((tecnologia, i) => {
           return (
-            <article
+            <TecnologiaCard
               key={i}
-              className="flex flex-col items-center gap-2 rounded-xl bg-white p-4 shadow"
-            >
-              <Image
-                src={`/tecnologias/${tecnologia.image}`}
-                alt={`Logotipo de ${tecnologia.title}`}
-                width={60}
-                height={60}
-              />
-              <h3 className="font-bold">{tecnologia.title}</h3>
-              <p className="text-center text-sm">{tecnologia.description}</p>
-              <p
-                className="text-yellow-500"
-                aria-label={`Rating ${tecnologia.rating} de 5`}
-              >
-                {"★".repeat(tecnologia.rating)}
-                {"☆".repeat(5 - tecnologia.rating)}
-              </p>
-            </article>
+              id={i}
+              title={tecnologia.title}
+              image={tecnologia.image}
+            />
           );
         })}
       </div>
