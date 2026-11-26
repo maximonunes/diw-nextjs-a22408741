@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Relogio from "@/components/Relogio/Relogio";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -32,6 +33,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             <Link href="/tecnologias" className="hover:underline">
               Tecnologias
             </Link>
+            <Link href="/contador" className="hover:underline">
+              Contador
+            </Link>
+            <Link href="/input" className="hover:underline">
+              Input
+            </Link>
           </nav>
         </header>
 
@@ -39,7 +46,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           {children}
         </main>
 
-        <footer>DIW {data.getFullYear()}</footer>
+        <footer className="flex gap-4">
+          <span>DIW {data.getFullYear()}</span>
+          <Relogio />
+        </footer>
       </body>
     </html>
   );
